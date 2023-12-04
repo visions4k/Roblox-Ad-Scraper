@@ -6,7 +6,7 @@ class Sender:
     def __init__(self):
         self.webhook = discordWebhook
 
-    def sendWebhook(self, imgUrl, adType):
+    def sendWebhook(self, imgUrl, adType, adName):
         if adType == 1:
             adTypeNew = "Banner"
         elif adType == 2:
@@ -16,7 +16,7 @@ class Sender:
         webhook = DiscordWebhook(url=self.webhook)
         embed = DiscordEmbed()
         embed.set_title("Ad Scraper")
-        embed.set_description(f"> **Type:** `{adTypeNew}`")
+        embed.set_description(f"> **Type:** `{adTypeNew}`\n> **Name:** `{adName}`")
         embed.set_image(url=imgUrl)
         embed.set_footer(text="Roblox Ad Scraper")
         embed.set_color(hex(embedColor)[2:])
