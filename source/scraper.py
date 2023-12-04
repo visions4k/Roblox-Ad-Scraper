@@ -16,8 +16,10 @@ class AdScraper:
                 time.sleep(delay)
                 response = requests.get(url)
                 soup = BeautifulSoup(response.text, 'html.parser')
-                if imgUrl := self.extractAd(soup):
-                    self.sender.sendWebhook(imgUrl, adType)
+                adData = self.extractAd(soup)
+                if adData is not None:
+                    imgUrl, adName = adData
+                    self.sender.sendWebhook(imgUrl, adType, adName)
                     if saveAds:
                         self.writeFile(imgUrl, adType)
 
@@ -28,4 +30,6 @@ class AdScraper:
 
     def extractAd(self, soup):
         imgTag = soup.find('img')
-        return imgTag['src'] if imgTag and 'src' in imgTag.attrs else None
+        if imgTag and 'src' in imgTag.attrs and 'alt' in imgTag.attrs:
+            return imgTag['src'], imgTag['alt']
+        return None, None
