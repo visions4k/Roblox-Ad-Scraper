@@ -26,12 +26,12 @@ python scraper
 ## Examples
 Banner Embed-
 
-![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181029395117396009/image.png?ex=657f9256&is=656d1d56&hm=dd54059ddb342460cffc26a7ce86d57d47d51dbb96b92390256aa2972f61b742&)
+![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181030924230590505/image.png?ex=657f93c2&is=656d1ec2&hm=ec2376fb51d32198faa429d1bbaf44bcd8a4fe13296e10bb3d86ad21d4ade0d7&)
 
 Skyscraper Embed-
 
-![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181029395339681863/image.png?ex=657f9256&is=656d1d56&hm=b7e48a3ba07b0f509c0f33c94eccccd66ce74e01ea2c79d1f2a1d85b45750975&)
+![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181030924465475644/image.png?ex=657f93c2&is=656d1ec2&hm=41d57f5068e96b232d89fc2a9cfd9c84c8fea5daff0bae391ee3ba0dee852404&)
 
 Square Embed-
 
-![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181029395608125490/image.png?ex=657f9256&is=656d1d56&hm=d33b73a228c27b504e4bd046195bd7b5c5d6a787191f2688885520fab6be172c&)
+![Banner](https://cdn.discordapp.com/attachments/1172623368994955354/1181030924687785984/image.png?ex=657f93c2&is=656d1ec2&hm=c69241e60795201093e2df6eb2aa0d071f227ed3fd572e27bce6f05dc0738790&)
