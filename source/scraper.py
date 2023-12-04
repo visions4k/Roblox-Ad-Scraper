@@ -1,6 +1,6 @@
 import requests
 import time
-from bs4 import BeautifulSoup
+import re
 from config import *
 from source.sender import Sender
 
@@ -13,10 +13,9 @@ class AdScraper:
             adTypes = [1, 2, 3]
             for adType in adTypes:
                 url = f"https://www.roblox.com/user-sponsorship/{adType}"
+                r = requests.get(url)
                 time.sleep(delay)
-                response = requests.get(url)
-                soup = BeautifulSoup(response.text, 'html.parser')
-                adData = self.extractAd(soup)
+                adData = self.extractAd(r)
                 if adData is not None:
                     imgUrl, adName, adRedirect = adData
                     self.sender.sendWebhook(imgUrl, adType, adName, adRedirect)
@@ -28,9 +27,10 @@ class AdScraper:
         with open(filePaths[adType], 'a') as f:
             f.write(imgUrl + '\n')
 
-    def extractAd(self, soup):
-        imgTag = soup.find('img')
-        aTag = soup.find('a')
-        if imgTag and 'src' in imgTag.attrs and 'alt' in imgTag.attrs and aTag and 'href' in aTag.attrs:
-            return imgTag['src'], imgTag['alt'], aTag['href']
-        return None, None, None
+    def extractAd(self, r):
+        if match := re.search('<img src=\"(.*?)\" alt=\"(.*?)\"', r.text):
+            imgUrl, name = match.groups()
+            redirectUrl = re.search(f'<a class="ad" title="{name}" href="(.*?)"', r.text).group(1)
+            return imgUrl, name, redirectUrl
+        else:
+            return None, None, None
