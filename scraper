@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from source.scraper import AdScraper
-from source.sender import Sender
+import asyncio
 
-def main():
+async def main():
     print(f"\033[92mStarting Scraper\033[0m")
     scraper = AdScraper()
-    scraper.scrapeAds()
+    await scraper.scrapeAds()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
