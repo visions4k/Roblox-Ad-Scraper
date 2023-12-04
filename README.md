@@ -1,4 +1,4 @@
-![image](https://github.com/visions4k/Roblox-Ad-Scraper/assets/44182242/313263ed-a565-493d-b81b-d68dc98dddd7)# Roblox Ad-Scraper
+# Roblox Ad-Scraper
 Automatically scrapes live roblox ads (updated), and sends them via a discord webhook. Also provides support for saving the ad urls to files. 
 
 + This gives out completely updated LIVE roblox ads, that are currently published
